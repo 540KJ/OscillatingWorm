@@ -1,0 +1,29 @@
+#include <Servo.h>
+Servo firstESC, secondESC, thirdESC, fourthESC;
+int t;
+int value;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  firstESC.attach(9);    // attached to pin 9 I just do this with 1 Servo
+  secondESC.attach(8);
+  thirdESC.attach(7);
+  fourthESC.attach(6);
+  t=millis();
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (millis()<t+7000){
+  //sends the 0 signal for 7 seconds
+  value = 1000;
+  Serial.println("Running");
+  firstESC.writeMicroseconds(value);
+  secondESC.writeMicroseconds(value);
+  thirdESC.writeMicroseconds(value);
+  fourthESC.writeMicroseconds(value);
+  } else {
+  //Insert everything else
+  }
+}
