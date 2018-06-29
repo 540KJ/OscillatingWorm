@@ -1,4 +1,3 @@
-
 #include <Wire.h>
 #include <FaBo9Axis_MPU9250.h>
 
@@ -6,10 +5,6 @@ FaBo9Axis fabo_9axis;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("RESET");
-  Serial.println();
-
-  Serial.println("configuring device.");
 
   if (fabo_9axis.begin()) {
     Serial.println("configured FaBo 9Axis I2C Brick");
@@ -36,14 +31,14 @@ void loop() {
   Serial.print(ay);
   Serial.print(" az: ");
   Serial.println(az);
-*/
+
   Serial.print("gx: ");
   Serial.print(gx);
   Serial.print(" gy: ");
   Serial.print(gy);
   Serial.print(" gz: ");
   Serial.println(gz);
-/*
+
   Serial.print("mx: ");
   Serial.print(mx);
   Serial.print(" my: ");
@@ -51,6 +46,22 @@ void loop() {
   Serial.print(" mz: ");
   Serial.println(mz);
 */
+//for serial monitor
+  /*
+  Serial.print(gx);
+  Serial.print(" ");
+  Serial.print(gy);
+  Serial.print(" ");
+  Serial.print(gz);
+  Serial.print(" ");
+  */
+  Serial.print(ax);
+  Serial.print(" ");
+  Serial.print(ay);
+  Serial.print(" ");
+  Serial.println(az);
 
-  delay(1000);
+ //To use serial monitor (which graphs the readings from the gyroscope), go to tools and open serial monitor. Or use cntrl shift L. 
+ //The lines are colour coded, its order as according to order the values are printed.
+//delay(1000)
 }
